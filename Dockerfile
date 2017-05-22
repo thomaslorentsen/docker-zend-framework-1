@@ -1,4 +1,4 @@
-FROM nginx:alpine
+FROM php:fpm-alpine
 
 MAINTAINER Tom Lorentsen "tom@thomaslorentsen.co.uk"
 
