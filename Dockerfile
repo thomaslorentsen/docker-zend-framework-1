@@ -13,5 +13,5 @@ RUN  apt-get update \
      xargs -0 sed --regexp-extended --in-place 's/(require_once)/\/\/ \1/g' \
   && mv /tmp/ZendFramework-1.12.9-minimal/library/Zend /usr/local/lib/php
 
-RUN apt-get install -y php5-apcu \
+RUN apt-get install -y php-apcu \
     && docker-php-ext-enable opcache.so
