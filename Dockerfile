@@ -1,4 +1,4 @@
-FROM php:fpm
+FROM php:5.6-fpm
 
 MAINTAINER Tom Lorentsen "tom@thomaslorentsen.co.uk"
 
@@ -13,5 +13,4 @@ RUN  apt-get update \
      xargs -0 sed --regexp-extended --in-place 's/(require_once)/\/\/ \1/g' \
   && mv /tmp/ZendFramework-1.12.9-minimal/library/Zend /usr/local/lib/php
 
-RUN pecl install apcu \
-    && docker-php-ext-enable apcu
+RUN apt-get install -y php5-apcu
